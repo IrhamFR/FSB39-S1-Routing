@@ -24,11 +24,6 @@ nav {
     font-weight: 500;
 }
 
-.container-card {
-    box-shadow: 0px 0px 6px gray;
-    align-items: center;
-}
-
 .ctc {
     border-radius: 30px !important;
     padding: 10px 30px !important;

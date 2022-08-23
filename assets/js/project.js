@@ -48,35 +48,37 @@ const renderproject = () => {
 
     for (let i =0; i < projects.length; i++) {
         containerProjects.innerHTML +=`
-        <div class="rounded container-card">
-            <div class="card mb-5">
-            <div class="card-body">
-                <img class="card-img size-img" src="${projects[i].image}" alt="" />
-            </div>
-            <div class="card-body pt-0">
-                <a href="project-detail.html" class="card-title text-dark fs-5 fw-bold">${projects[i].title}</a>
-                <p class="text-black-50 pb-0">Duration : ${getDuration(projects[i].startProject, projects[i].endProject)}</p>
-                <p class="text-card m-0">${projects[i].content}</p>
-                <div class="card-body hstack gap-3 text-black-50 ps-0 fs-3">
-                    ${(function icon() {
-                    let string = ""
-                    for (let j = 0; j < projects[i].checkedValue.length; j++) {
-                        string += `
-                        <div class="bg-transparent">
-                            <i class="${projects[i].checkedValue[j]}"></i>
-                        </div>
-                        `}
+        <div class="mx-auto">
+            <div class="mx-5 mb-5" style="width: 20rem">
+                <div class="shadow rounded card">
+                    <div class="card-body">
+                        <img class="card-img size-img" src="${projects[i].image}" alt="" />
+                    </div>
+                    <div class="card-body pt-0">
+                        <a href="/project-detail" class="card-title text-dark fs-5 fw-bold">${projects[i].title}</a>
+                        <p class="text-black-50 pb-0">Duration : ${getDuration(projects[i].startProject, projects[i].endProject)}</p>
+                        <p class="text-card m-0">${projects[i].content}</p>
+                        <div class="card-body hstack gap-3 text-black-50 ps-0 fs-3">
+                            ${(function icon() {
+                            let string = ""
+                            for (let j = 0; j < projects[i].checkedValue.length; j++) {
+                                string += `
+                                <div class="bg-transparent">
+                                    <i class="${projects[i].checkedValue[j]}"></i>
+                                </div>
+                                `}
 
-                    return string
-                    })()}
+                            return string
+                            })()}
+                        </div>
+                        <div class="row gap-2 m-auto">
+                            <a href="#" class="rounded btn btn-dark col">edit</a>
+                            <a href="#" class="rounded btn btn-danger border col">delete</a>
+                        </div>
+                    </div>
                 </div>
-            <div class="row gap-2 m-auto">
-                <a href="#" class="rounded btn btn-dark col">edit</a>
-                <a href="#" class="rounded btn btn-danger border col">delete</a>
             </div>
-        </div> 
         </div>
-         
         `
     }
 }
